@@ -1,0 +1,12 @@
+item_id,product_name,department_name,price,stock_quantity
+
+1,shirt,apparel,11.50,50
+2,bracelet,jewelry,5.50,20
+3,scrunchie,accessories,0.75,100
+4,necklace,jewelry,10.00,25
+5,hat,accessories,8.75,30
+6,alarm clock,electronics,25.00,35
+7,television,electronics,650.00,10
+8,earrings,jewelry,12.20,20
+9,umbrella,accessories,12.65,40
+10,mug,accessories,4.50,60
