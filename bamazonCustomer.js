@@ -45,7 +45,7 @@ function placeOrder() {
             },
             {
                 type: "input",
-                message: "How many of this item would you like to purchase?",
+                message: "How many units would you like to purchase?",
                 name: "customerQuantity",
                 validate:function(value) {
                     if (isNaN(value) === false) {
@@ -67,7 +67,7 @@ function placeOrder() {
                     var chosenItem = queryResponse[i];
 
                     if (parseInt(response.customerQuantity) < chosenItem.stock_quantity) {
-                        
+
                         console.log("Placing your order...");
                         console.log("---------------------------------------");
 
