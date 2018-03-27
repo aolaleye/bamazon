@@ -13,13 +13,13 @@ connection.connect(function(err) {
     if (err) throw err;
     console.log("connected as id " + connection.threadId + "\n");
     itemsForSale();
-});  
+});//<-- end connection.connect
 
 function itemsForSale() {
-    connection.query("SELECT * FROM products", function(err, response) {
+    connection.query("SELECT * FROM products", function(err, queryResponse) {
         if (err) throw err;
-        for (var i = 0; i < response.length; i++) {
-            console.log("Item ID #: " + response[i].item_id + " \nItem Name: " + response[i].product_name + " \nDepartment: " + response[i].department_name + " \nPrice: $" + response[i].price + " \nNumber of Items Remaining: " + response[i].stock_quantity);
+        for (var i = 0; i < queryResponse.length; i++) {
+            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Items Remaining: " + queryResponse[i].stock_quantity);
             console.log("-----------------------------------");
         }
     });
