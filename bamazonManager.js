@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId + "\n");
+    console.log("Connected to database. ID: " + connection.threadId + "\n");
     managerMenu();
 });//<-- end connection.connect
 
@@ -48,20 +48,55 @@ function viewProductsForSale() {
     connection.query("SELECT * FROM products", function(err, queryResponse) {
         if (err) throw err;
         for (var i = 0; i < queryResponse.length; i++) {
-            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Items Remaining: " + queryResponse[i].stock_quantity);
             console.log("-----------------------------------");
+            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
         }
+        console.log("-----------------------------------");
+        anotherAction();
     });//<-- end connection.query
 }//<-- end viewProductsForSale()
 
 function viewLowInventory() {
-
+    connection.query("SELECT * FROM products", function(err, queryResponse) {
+        if (err) throw err;
+        console.log("-----------------------------------");
+        console.log("LOW INVENTORY ITEMS: ");
+        for (var i = 0; i < queryResponse.length; i++) {
+            if(queryResponse[i].stock_quantity < 30) {
+            console.log("-----------------------------------");
+            console.log("Item Name: " + queryResponse[i].product_name + "\nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
+            }
+        }
+        console.log("-----------------------------------");
+        anotherAction();
+    });
 }//<-- end viewLowInventory()
 
-function addToInventory() {
+// function addToInventory() {
 
-}//<-- end addToInventory()
+// }//<-- end addToInventory()
 
-function addNewProduct() {
+// function addNewProduct() {
 
-}//<-- end addNewProduct()
+// }//<-- end addNewProduct()
+
+function anotherAction() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Return to Menu or Exit?",
+            name: "anotherAction",
+            choices: ["Return to Menu", "Exit"]
+        }
+    ]).then(function(response) {
+        switch (response.anotherAction) {
+            case "Return to Menu":
+            managerMenu();
+            break;
+        
+            case "Exit":
+            connection.end();
+            break;
+        }
+    });//<-- end inquirer .then()
+}
