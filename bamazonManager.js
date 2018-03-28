@@ -37,7 +37,7 @@ function managerMenu() {
             addToInventory();
             break;
         
-            case "Add New Products":
+            case "Add New Product":
             addNewProduct();
             break;
         }
@@ -69,7 +69,7 @@ function viewLowInventory() {
         }
         console.log("-----------------------------------");
         anotherAction();
-    });
+    });//<-- end connection.query
 }//<-- end viewLowInventory()
 
 // function addToInventory() {
@@ -77,55 +77,61 @@ function viewLowInventory() {
 // }//<-- end addToInventory()
 
 function addNewProduct() {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "Enter Product Name:",
-            name: "itemName"
-        },
-        {
-            type: "input",
-            message: "Enter Department Name:",
-            name: "itemDepartment"
-        },
-        {
-            type: "input",
-            message: "Enter Item Price:",
-            name: "itemPrice",
-            validate:function(value) {
-                if (isNaN(value) === false) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } 
-        },
-        {
-            type: "input",
-            message: "Enter Stock Quantity:",
-            name: "itemQuantity",
-            validate:function(value) {
-                if (isNaN(value) === false) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } 
-        }
-    ]).then(function(response) {
-        connection.query("INSERT INTO products SET ?",
+    connection.query("SELECT * FROM products", function(err, queryResponse) {
+        inquirer.prompt([
             {
-              product_name: response.itemName,
-              department_name: response.itemDepartment,
-              price: response.itemPrice,
-              stock_quantity: response.itemQuantity
+                type: "input",
+                message: "Enter Product Name:",
+                name: "itemName"
             },
-            function(err, queryResponse) {
-                if(err) throw err;
-                console.log("Item successfully added!");
-                anotherAction();
-            });//<-- end connection.query
-    });//<-- end inquirer .then()
+            {
+                type: "input",
+                message: "Enter Department Name:",
+                name: "itemDepartment"
+            },
+            {
+                type: "input",
+                message: "Enter Item Price:",
+                name: "itemPrice",
+                validate:function(value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } 
+            },
+            {
+                type: "input",
+                message: "Enter Stock Quantity:",
+                name: "itemQuantity",
+                validate:function(value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } 
+            }
+        ]).then(function(response) {
+                if (err) throw err;
+                var itemID = queryResponse.length + 1;
+                connection.query("INSERT INTO products SET ?",
+                {
+                    item_id: itemID,
+                    product_name: response.itemName,
+                    department_name: response.itemDepartment,
+                    price: response.itemPrice,
+                    stock_quantity: response.itemQuantity
+                },
+                function(err, queryResponse) {
+                    if(err) throw err;
+                    console.log("Item successfully added!");
+                    anotherAction();
+                }
+            );//<-- end INSERT connection.query 
+        });//<-- end inquirer .then()
+    });//<-- end SELECT connection.query
 }//<-- end addNewProduct()
 
 function anotherAction() {
