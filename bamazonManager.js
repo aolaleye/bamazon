@@ -73,76 +73,76 @@ function viewLowInventory() {
 }//<-- end viewLowInventory()
 
 function addToInventory() {
-connection.query("SELECT * FROM products", function(err, queryResponse) {
-    inquirer.prompt([
-        {
-            type: "input",
-            message: "Enter the Item ID # of the item you would like add inventory to: ",
-            name: "itemID",
-            validate:function(value) {
-                if (isNaN(value) === false) {
-                    return true;
-                } else {
-                    return false;
-                }
-            } 
-        }
-    ]).then(function(response) {
-        for(i = 0; i < queryResponse.length; i++) {
-            if (parseInt(response.itemID) === queryResponse[i].item_id) {
-                var chosenItem = queryResponse[i];
-                console.log("---------------------------------------");
-                console.log("CHOSEN ITEM:");
-                console.log("---------------------------------------");
-                console.log("Item ID #: " + chosenItem.item_id + " \nItem Name: " + chosenItem.product_name + " \nNumber of Units Remaining: " + chosenItem.stock_quantity);
-                console.log("---------------------------------------");
-
-                inquirer.prompt([
-                    {
-                        type: "input",
-                        message: "How many units would you like to add to this item: ",
-                        name: "unitsAdded",
-                        validate:function(value) {
-                            if (isNaN(value) === false) {
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        } 
+    connection.query("SELECT * FROM products", function(err, queryResponse) {
+        inquirer.prompt([
+            {
+                type: "input",
+                message: "Enter the Item ID # of the item you would like add inventory to: ",
+                name: "itemID",
+                validate:function(value) {
+                    if (isNaN(value) === false) {
+                        return true;
+                    } else {
+                        return false;
                     }
-                ]).then(function(response) {
+                } 
+            }
+        ]).then(function(response) {
+            for(i = 0; i < queryResponse.length; i++) {
+                if (parseInt(response.itemID) === queryResponse[i].item_id) {
+                    var chosenItem = queryResponse[i];
                     console.log("---------------------------------------");
-                    console.log("Adding " + response.unitsAdded + " units...");
-                    var updatedUnits = chosenItem.stock_quantity + parseInt(response.unitsAdded);
-                    connection.query("UPDATE products SET ? WHERE ?",
-                        [
-                            {
-                            stock_quantity: chosenItem.stock_quantity + parseInt(response.unitsAdded)
-                            },
-                            {
-                            item_id: chosenItem.item_id
-                            }
-                        ],
-                        function(err, res) {
-                            if(err) throw err;
-                            console.log("---------------------------------------");
-                            console.log("UPDATED ITEM:");
-                            console.log("---------------------------------------");
-                            console.log("Item ID #: " + chosenItem.item_id + " \nItem Name: " + chosenItem.product_name + " \nNumber of Units Remaining: " + updatedUnits);
-                            console.log("---------------------------------------");
-                            anotherAction();                      
+                    console.log("CHOSEN ITEM:");
+                    console.log("---------------------------------------");
+                    console.log("Item ID #: " + chosenItem.item_id + " \nItem Name: " + chosenItem.product_name + " \nNumber of Units Remaining: " + chosenItem.stock_quantity);
+                    console.log("---------------------------------------");
+
+                    inquirer.prompt([
+                        {
+                            type: "input",
+                            message: "How many units would you like to add to this item: ",
+                            name: "unitsAdded",
+                            validate:function(value) {
+                                if (isNaN(value) === false) {
+                                    return true;
+                                } else {
+                                    return false;
+                                }
+                            } 
                         }
-                    );//<-- end UPDATE connection.query
-                    
-                });//<-- end inquirer .then()
+                    ]).then(function(response) {
+                        console.log("---------------------------------------");
+                        console.log("Adding " + response.unitsAdded + " units...");
+                        var updatedUnits = chosenItem.stock_quantity + parseInt(response.unitsAdded);
+                        connection.query("UPDATE products SET ? WHERE ?",
+                            [
+                                {
+                                stock_quantity: chosenItem.stock_quantity + parseInt(response.unitsAdded)
+                                },
+                                {
+                                item_id: chosenItem.item_id
+                                }
+                            ],
+                            function(err, res) {
+                                if(err) throw err;
+                                console.log("---------------------------------------");
+                                console.log("UPDATED ITEM:");
+                                console.log("---------------------------------------");
+                                console.log("Item ID #: " + chosenItem.item_id + " \nItem Name: " + chosenItem.product_name + " \nNumber of Units Remaining: " + updatedUnits);
+                                console.log("---------------------------------------");
+                                anotherAction();                      
+                            }
+                        );//<-- end UPDATE connection.query
+                        
+                    });//<-- end inquirer .then()
 
-            } //<-- end if statement
+                } //<-- end if statement
 
-        }//<-- end queryResponse For Loop
+            }//<-- end queryResponse For Loop
 
-    });//<-- end inquirer .then()
+        });//<-- end inquirer .then()
 
-});//<-- end SELECT connection.query
+    });//<-- end SELECT connection.query
 
 }//<-- end addToInventory()
 
