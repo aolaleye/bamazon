@@ -11,7 +11,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if (err) throw err;
-    console.log("connected as id " + connection.threadId + "\n");
+    console.log("Connected to database. ID: " + connection.threadId + "\n");
     itemsForSale();
 });//<-- end connection.connect
 
@@ -19,7 +19,7 @@ function itemsForSale() {
     connection.query("SELECT * FROM products", function(err, queryResponse) {
         if (err) throw err;
         for (var i = 0; i < queryResponse.length; i++) {
-            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Items Remaining: " + queryResponse[i].stock_quantity);
+            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             console.log("-----------------------------------");
         }
     });
@@ -90,12 +90,12 @@ function placeOrder() {
                         console.log("Your order has been succesfully placed!");
                         console.log("Your total price is: $" + customerPrice);
                         console.log("---------------------------------------");
-                        connection.end();
+                        anotherOrder();
 
                     } else {
                         console.log("Sorry, there is insufficient stock to place your order.");
                         console.log("---------------------------------------");
-                        connection.end();
+                        anotherOrder();
                     }
 
                 }//<--- end if statement
@@ -107,3 +107,25 @@ function placeOrder() {
     });//<-- end connection.query
 
 }//<-- end placeOrder()
+
+function anotherOrder() {
+    inquirer.prompt([
+        {
+            type: "list",
+            message: "Would you like to place another order?",
+            name: "anotherOrder",
+            choices: ["Yes", "No"]
+        }
+    ]).then(function(response) {
+        switch (response.anotherOrder) {
+            case "Yes":
+            itemsForSale();
+            break;
+        
+            case "No":
+            console.log("Come back soon!");
+            connection.end();
+            break;
+        }
+    });
+}
