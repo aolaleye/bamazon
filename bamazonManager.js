@@ -62,7 +62,7 @@ function viewLowInventory() {
         console.log("-----------------------------------");
         console.log("LOW INVENTORY ITEMS: ");
         for (var i = 0; i < queryResponse.length; i++) {
-            if(queryResponse[i].stock_quantity < 30) {
+            if(queryResponse[i].stock_quantity < 5) {
             console.log("-----------------------------------");
             console.log("Item Name: " + queryResponse[i].product_name + "\nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             }
@@ -76,9 +76,57 @@ function viewLowInventory() {
 
 // }//<-- end addToInventory()
 
-// function addNewProduct() {
-
-// }//<-- end addNewProduct()
+function addNewProduct() {
+    inquirer.prompt([
+        {
+            type: "input",
+            message: "Enter Product Name:",
+            name: "itemName"
+        },
+        {
+            type: "input",
+            message: "Enter Department Name:",
+            name: "itemDepartment"
+        },
+        {
+            type: "input",
+            message: "Enter Item Price:",
+            name: "itemPrice",
+            validate:function(value) {
+                if (isNaN(value) === false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } 
+        },
+        {
+            type: "input",
+            message: "Enter Stock Quantity:",
+            name: "itemQuantity",
+            validate:function(value) {
+                if (isNaN(value) === false) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } 
+        }
+    ]).then(function(response) {
+        connection.query("INSERT INTO products SET ?",
+            {
+              product_name: response.itemName,
+              department_name: response.itemDepartment,
+              price: response.itemPrice,
+              stock_quantity: response.itemQuantity
+            },
+            function(err, queryResponse) {
+                if(err) throw err;
+                console.log("Item successfully added!");
+                anotherAction();
+            });//<-- end connection.query
+    });//<-- end inquirer .then()
+}//<-- end addNewProduct()
 
 function anotherAction() {
     inquirer.prompt([
@@ -99,4 +147,4 @@ function anotherAction() {
             break;
         }
     });//<-- end inquirer .then()
-}
+}//<-- end anotherAction()
