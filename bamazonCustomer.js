@@ -18,6 +18,9 @@ connection.connect(function(err) {
 function itemsForSale() {
     connection.query("SELECT * FROM products", function(err, queryResponse) {
         if (err) throw err;
+        console.log("---------------------------------------");
+        console.log("All Available Products for Purchase:");
+        console.log("---------------------------------------");
         for (var i = 0; i < queryResponse.length; i++) {
             console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             console.log("-----------------------------------");
@@ -58,23 +61,31 @@ function placeOrder() {
             
         ]).then(function(response) {
             console.log("---------------------------------------");
-            console.log("Checking our stock...");
+            console.log("Checking Our Stock...");
             console.log("---------------------------------------");
+
+            var itemFound = false;
 
             for(i = 0; i < queryResponse.length; i++) {
                 if (parseInt(response.customerItemID) === queryResponse[i].item_id) {
-                    console.log("Item located");
+                    itemFound = true;
+                    console.log("Requested Item Located");
+                    console.log("---------------------------------------");
+
                     var chosenItem = queryResponse[i];
 
                     if (parseInt(response.customerQuantity) < chosenItem.stock_quantity) {
 
-                        console.log("Placing your order...");
+                        console.log("Placing Your Order...");
                         console.log("---------------------------------------");
+
+                        var customerPrice = parseFloat(chosenItem.price) * parseInt(response.customerQuantity);
 
                         connection.query("UPDATE products SET ? WHERE ?",
                             [
                                 {
-                                stock_quantity: parseFloat(chosenItem.stock_quantity) - parseFloat(response.customerQuantity)
+                                stock_quantity: parseFloat(chosenItem.stock_quantity) - parseFloat(response.customerQuantity),
+                                product_sales: parseFloat(chosenItem.product_sales) + customerPrice,
                                 },
                                 {
                                 item_id: chosenItem.item_id
@@ -85,10 +96,9 @@ function placeOrder() {
                             }
                         );
 
-                        var customerPrice = parseFloat(chosenItem.price) * parseInt(response.customerQuantity);
-
-                        console.log("Your order has been succesfully placed!");
-                        console.log("Your total price is: $" + customerPrice);
+                        console.log("Your Order Has Been Succesfully Placed!");
+                        console.log("---------------------------------------");
+                        console.log("Your Total Price is: $" + customerPrice);
                         console.log("---------------------------------------");
                         anotherOrder();
 
@@ -101,6 +111,12 @@ function placeOrder() {
                 }//<--- end if statement
 
             }//<-- end queryResponse For Loop
+
+            if (itemFound === false) {
+                console.log("Sorry, Unable to Locate Requested Item.");
+                console.log("---------------------------------------");
+                anotherOrder();
+            }//<-- if requested item doesn't match an item_id in the database
 
         });//<-- end inquirer .then()
 
@@ -123,7 +139,9 @@ function anotherOrder() {
             break;
         
             case "No":
-            console.log("Come back soon!");
+            console.log("---------------------------------------");
+            console.log("Come Again Soon!");
+            console.log("---------------------------------------");
             connection.end();
             break;
         }
