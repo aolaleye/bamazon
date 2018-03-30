@@ -12,9 +12,9 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 
 ### Customer View: 
-#### `node bamazonCustomer.js`
-
 __LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
+
+* #### `node bamazonCustomer.js`
 
 * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
 
@@ -41,9 +41,9 @@ __LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 * Once the update goes through, the app shows the customer the total cost of their purchase.
 
 ### Manager View: 
-#### `node bamazonManager.js`
-
 __LIVE DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
+
+* #### `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
     * _View Products for Sale_
@@ -66,9 +66,9 @@ __LIVE DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
 __NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
 
 ### Supervisor View: 
-#### `node bamazonSupervisor.js`
-
 __LIVE DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
+
+* #### `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
 
