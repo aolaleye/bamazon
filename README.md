@@ -1,15 +1,15 @@
-# Bamazon - MySQL/Node Application
+# Bamazon - A MySQL/Node Application
 
-### Overview
+#### Overview
 This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level - where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
 
 This application utlizes the following npm packages:
 * _mysql (to access the MySQL database)_
 * _inquirer (to retrieve information from the user)_
-* _console.table (to log a SQL table to the console)_
-* __Note:__ _run `npm i` to install the packages included in the json package_
+* _console.table (to log SQL tables to the console)_
+__Note:__ run `npm i` to install the packages included in the json package
 
-### __Customer View__
+#### Customer View
 #### `node bamazonCustomer.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
@@ -38,7 +38,7 @@ This application utlizes the following npm packages:
 
     * Once the update goes through, the app shows the customer the total cost of their purchase.
 
-### __Manager View__
+#### Manager View
 #### `node bamazonManager.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
@@ -61,9 +61,9 @@ This application utlizes the following npm packages:
     * __Add New Product__
         * This choice allows the manager to add a completely new product to the store.
 
-    * __NOTE:__ _Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin"_.
+* __NOTE:__ _Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin"_.
 
-### __Supervisor View__
+#### Supervisor View
 #### `node bamazonSupervisor.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
@@ -88,5 +88,5 @@ This application utlizes the following npm packages:
 
     * __View Product Sales by Department__
         * The app displays a summarized table of the SQL Database Data directly in the console.
-        
-    * __NOTE:__ _Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin"_.
+
+* __NOTE:__ _Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin"_.
