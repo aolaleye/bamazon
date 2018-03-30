@@ -12,7 +12,7 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 
 ### Customer View: 
-__LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
+__DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
 
 * #### `node bamazonCustomer.js`
 
@@ -40,33 +40,27 @@ __LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 
 * Once the update goes through, the app shows the customer the total cost of their purchase.
 
+
 ### Manager View: 
-__LIVE DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
+__DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
 
 * #### `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
-    * _View Products for Sale_
-    * _View Low Inventory_
-    * _Add to Inventory_
-    * _Add New Product_
-
-* __View Products for Sale__
-    * The app lists every available item including the item IDs, names, prices, and quantities.
-
-* __View Low Inventory__
-    * The app lists all items with an inventory count lower than 15.
-
-* __Add to Inventory__
-    * This choice allows the manager add inventory to any item currently in the store.
-
-* __Add New Product__
-    * This choice allows the manager to add a completely new product to the store.
+    * __View Products for Sale__
+        * _The app lists every available item including the item IDs, names, prices, and quantities._
+    * __View Low Inventory__
+        * _The app lists all items with an inventory count lower than 15._
+    * __Add to Inventory__
+        * _This choice allows the manager add inventory to any item currently in the store._
+    * __Add New Product__
+        * _This choice allows the manager to add a completely new product to the store._
 
 __NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
 
+
 ### Supervisor View: 
-__LIVE DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
+__DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
 
 * #### `node bamazonSupervisor.js`
 
@@ -82,13 +76,9 @@ __LIVE DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
 * So whenever a customer purchases anything from the store, the price of the product is multiplied by the quantity purchased added added to the product's product_sales column, and the updates are immediately reflected in the SQL database.
 
 * Upon running the command, the app prompts the supervisor to select between two options:
-    * _View Product Sales By Department_
-    * _Create New Department_
-
-* __Create New Department__
-    * This choice allows the manager to add a completely new product to the store.
-
-* __View Product Sales by Department__
-    * The app displays a summarized table of the SQL Database Data directly in the console.
+    * __View Product Sales By Department__
+        * _This choice allows the manager to add a completely new product to the store._
+    * __Create New Department__
+        * _The app displays a summarized table of the SQL Database Data directly in the console._
 
 __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
