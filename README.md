@@ -1,6 +1,6 @@
 # Bamazon MySQL/Node Application
 
-## Overview
+### Overview
 This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level- where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
 
 #### __This application utlizes the following npm packages:__
@@ -8,8 +8,8 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
 * _inquirer (to retrieve information from the user)_
 * _console.table (to log a SQL table to the console)_
 
-## __Customer View__
-* #### `node bamazonCustomer.js`
+### __Customer View__
+* ### `node bamazonCustomer.js`
 
     * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
     * The database contains the table _products_ which houses each product's:
@@ -28,12 +28,12 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
     * Once the customer has placed the order, the app checks if the store has enough of the product to meet the customer's request.
         * If not, the app informs the customer that there is insufficient quantity and prevents the order from going through.
         * However, if the store does have enough of the product, the customer's order is fulfilled.
-        
+
     * The SQL database is immediately updated to reflect the remaining quantity of the product of the customer's purchase.
     * Once the update goes through, the app shows the customer the total cost of their purchase.
 
-## __Manager View__
-* #### `node bamazonManager.js`
+### __Manager View__
+* ### `node bamazonManager.js`
 
     * Upon running the command, the app prompts the manager to select among four options:
         * _View Products for Sale_
@@ -50,8 +50,8 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
     * __Add New Product__
         * This choice allows the manager to add a completely new product to the store.
 
-## __Supervisor View__
-* #### `node bamazonSupervisor.js`
+### __Supervisor View__
+* ### `node bamazonSupervisor.js`
 
     * In Supervisor mode, the app accesses a different table within the bamazon_db MySQL Database.
     * The table _departments_ houses each product's:

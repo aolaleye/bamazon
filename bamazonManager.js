@@ -62,7 +62,7 @@ function viewLowInventory() {
         console.log("-----------------------------------");
         console.log("LOW INVENTORY ITEMS: ");
         for (var i = 0; i < queryResponse.length; i++) {
-            if(queryResponse[i].stock_quantity < 5) {
+            if(queryResponse[i].stock_quantity < 15) {
             console.log("-----------------------------------");
             console.log("Item Name: " + queryResponse[i].product_name + "\nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             }
