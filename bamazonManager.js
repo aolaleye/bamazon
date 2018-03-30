@@ -9,11 +9,27 @@ var connection = mysql.createConnection({
     database: "bamazon_db"
   });
 
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected to database. ID: " + connection.threadId + "\n");
-    managerMenu();
-});//<-- end connection.connect
+//Enter password for Manager Access
+inquirer.prompt([
+   {
+        type: "password",
+        message: "Enter Password for Access:",
+        name: "password"
+    }
+]).then(function(response) {
+    if(response.password === "admin") {
+        console.log("\nAccess Granted.\n");
+        connection.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected to database. ID: " + connection.threadId + "\n");
+            managerMenu();
+        });//<-- end connection.connect
+    } else {
+        console.log("\nIncorrect Password. Access Denied.\n");
+        connection.end();
+    }
+});//<-- end inquirer .then()
+
 
 function managerMenu() {
     inquirer.prompt([

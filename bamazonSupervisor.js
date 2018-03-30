@@ -10,11 +10,26 @@ var connection = mysql.createConnection({
     database: "bamazon_db"
   });
 
-connection.connect(function(err) {
-    if (err) throw err;
-    console.log("Connected to database. ID: " + connection.threadId + "\n");
-    supervisorMenu();
-});//<-- end connection.connect
+//Enter password for Supervisor Access
+inquirer.prompt([
+   {
+        type: "password",
+        message: "Enter Password for Access:",
+        name: "password"
+    }
+]).then(function(response) {
+    if(response.password === "admin") {
+        console.log("\nAccess Granted.\n");
+        connection.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected to database. ID: " + connection.threadId + "\n");
+            supervisorMenu();
+        });//<-- end connection.connect
+    } else {
+        console.log("\nIncorrect Password. Access Denied.\n");
+        connection.end();
+    }
+});//<-- end inquirer .then()
 
 function supervisorMenu() {
     inquirer.prompt([
@@ -42,9 +57,9 @@ function salesByDepartment() {
     connection.query("SELECT * FROM departments", function(err, queryResponse) {
         if (err) throw err;
 
-        console.log("----------------------------------------------");
+        console.log("-----------------------------------------------");
         console.log("PRODUCT SALES BY DEPARTMENT:");
-        console.log("----------------------------------------------");
+        console.log("-----------------------------------------------");
 
         var values = [];
 
@@ -58,7 +73,7 @@ function salesByDepartment() {
         }//<-- end For loop
         
         console.table(['Department ID', 'Department Name', 'Overhead Costs'], values);
-        console.log("----------------------------------------------");
+        console.log("-----------------------------------------------");
         anotherAction();
 
     });//<-- end departments connection.query
@@ -94,11 +109,11 @@ function createNewDepartment() {
                 },
                 function(err, queryResponse) {
                     if(err) throw err;
-                    console.log("----------------------------------------------");
+                    console.log("-----------------------------------------------");
                     console.log("New Department Successfully Added!");
-                    console.log("----------------------------------------------");
+                    console.log("-----------------------------------------------");
                     console.log("Department Name: " + response.departmentName + " \nOverhead Costs: " + response.overheadCosts);
-                    console.log("----------------------------------------------");
+                    console.log("-----------------------------------------------");
                     anotherAction();
                 }
             );//<-- end INSERT connection.query 
