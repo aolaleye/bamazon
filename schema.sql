@@ -1,5 +1,3 @@
--- bamazon_db --
-
 DROP DATABASE IF EXISTS bamazon_db;
 CREATE database bamazon_db;
 
@@ -14,8 +12,6 @@ CREATE TABLE products (
   product_sales DECIMAL(10,2) DEFAULT 0,
   PRIMARY KEY (item_id)
 );
-
-SELECT * FROM products;
 
 CREATE TABLE departments (
   department_id INT AUTO_INCREMENT NOT NULL,
@@ -32,7 +28,8 @@ INSERT INTO departments (department_name, over_head_costs) values ('accessories'
 SELECT * FROM products;
 SELECT * FROM departments;
 
-SELECT department_id, departments.department_name, over_head_costs
+SELECT department_id, departments.department_name, over_head_costs,
+SUM(product_sales) AS total_product_sales
 FROM products
 INNER JOIN departments ON products.department_name = departments.department_name
 GROUP BY department_id;
