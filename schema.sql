@@ -1,3 +1,5 @@
+-- bamazon_db --
+
 DROP DATABASE IF EXISTS bamazon_db;
 CREATE database bamazon_db;
 
@@ -14,3 +16,26 @@ CREATE TABLE products (
 );
 
 SELECT * FROM products;
+
+CREATE TABLE departments (
+  department_id INT AUTO_INCREMENT NOT NULL,
+  department_name VARCHAR(100),
+  over_head_costs DECIMAL(18,2),
+  PRIMARY KEY (department_id)
+);
+
+INSERT INTO departments (department_name, over_head_costs) values ('apparel', '20000.00');
+INSERT INTO departments (department_name, over_head_costs) values ('jewelry', '5000.00');
+INSERT INTO departments (department_name, over_head_costs) values ('electronics', '10000.00');
+INSERT INTO departments (department_name, over_head_costs) values ('accessories', '60000.00');
+
+SELECT * FROM products;
+SELECT * FROM departments;
+
+SELECT department_id, departments.department_name, over_head_costs
+FROM products
+INNER JOIN departments ON products.department_name = departments.department_name
+GROUP BY department_id;
+
+
+
