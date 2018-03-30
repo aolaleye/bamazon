@@ -197,7 +197,9 @@ function addNewProduct() {
                 function(err, queryResponse) {
                     if(err) throw err;
                     console.log("-----------------------------------");
-                    console.log("New Product successfully added!");
+                    console.log("New Product Successfully Added!");
+                    console.log("-----------------------------------");
+                    console.log("Item ID #: " + itemID + " \nItem Name: " + response.itemName + " \nDepartment: " + response.itemDepartment + " \nPrice: $" + response.itemPrice + " \nNumber of Units Remaining: " + response.itemQuantity);
                     console.log("-----------------------------------");
                     anotherAction();
                 }
