@@ -1,18 +1,19 @@
-# Bamazon MySQL/Node Application
+# Bamazon - MySQL/Node Application
 
 ### Overview
-This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level- where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
+This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level - where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
 
 #### __This application utlizes the following npm packages:__
 * _mysql (to access the MySQL database)_
 * _inquirer (to retrieve information from the user)_
 * _console.table (to log a SQL table to the console)_
+* __Note:__ _run `npm i` to install the packages included in the json package_
 
 ### __Customer View__
-* ### `node bamazonCustomer.js`
+### `node bamazonCustomer.js`
 
     * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
-    * The database contains the table _products_ which houses each product's:
+    * The database contains the table __products__ which houses each product's:
         * *item_id (Unique id for each product)*
         * *product_name (The name of the product)*
         * *department_name (The name of product's department)*
@@ -32,8 +33,11 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
     * The SQL database is immediately updated to reflect the remaining quantity of the product of the customer's purchase.
     * Once the update goes through, the app shows the customer the total cost of their purchase.
 
+    [![Customer View - Video Example](https://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](CustomerView.webm)
+
+
 ### __Manager View__
-* ### `node bamazonManager.js`
+### `node bamazonManager.js`
 
     * Upon running the command, the app prompts the manager to select among four options:
         * _View Products for Sale_
@@ -50,11 +54,15 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
     * __Add New Product__
         * This choice allows the manager to add a completely new product to the store.
 
-### __Supervisor View__
-* ### `node bamazonSupervisor.js`
+    * __NOTE:__ _Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin"_.
 
-    * In Supervisor mode, the app accesses a different table within the bamazon_db MySQL Database.
-    * The table _departments_ houses each product's:
+    [![Manager View - Video Example](https://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](ManagerView.webm)
+
+### __Supervisor View__
+### `node bamazonSupervisor.js`
+
+    * In Supervisor mode, the app accesses the table __departments__ within the MySQL Database.
+    * This table houses each product's:
         * *department_id (Unique id for each department)*
         * *department_name (The name of the department)*
         * *over_head_costs (All costs for the department)*
@@ -70,3 +78,7 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
         * This choice allows the manager to add a completely new product to the store.
     * __View Product Sales by Department__
         * The app displays a summarized table of the SQL Database Data directly in the console.
+
+    * __NOTE:__ _Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin"_.
+
+    [![Supervisor View - Video Example](https://img.youtube.com/vi/T-D1KVIuvjA/0.jpg)](SupervisorView.webm)
