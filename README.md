@@ -1,4 +1,4 @@
-# Bamazon - A MySQL/Node Application
+# Bamazon - MySQL/Node Application
 
 #### Overview
 This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level - where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
@@ -7,10 +7,10 @@ This application utlizes the following npm packages:
 * _mysql (to access the MySQL database)_
 * _inquirer (to retrieve information from the user)_
 * _console.table (to log SQL tables to the console)_
+
 __Note:__ run `npm i` to install the packages included in the json package
 
-#### Customer View
-#### `node bamazonCustomer.js`
+### Customer View: #### `node bamazonCustomer.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
 
@@ -38,8 +38,7 @@ __Note:__ run `npm i` to install the packages included in the json package
 
     * Once the update goes through, the app shows the customer the total cost of their purchase.
 
-#### Manager View
-#### `node bamazonManager.js`
+### Manager View: #### `node bamazonManager.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
 
@@ -63,8 +62,7 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 * __NOTE:__ _Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin"_.
 
-#### Supervisor View
-#### `node bamazonSupervisor.js`
+### Supervisor View: #### `node bamazonSupervisor.js`
 
 * __LIVE DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
 
