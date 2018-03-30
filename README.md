@@ -32,7 +32,6 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
 
     * The SQL database is immediately updated to reflect the remaining quantity of the product of the customer's purchase.
     * Once the update goes through, the app shows the customer the total cost of their purchase.
-
     * LIVE DEMO:
         * https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
 
@@ -56,7 +55,6 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
         * This choice allows the manager to add a completely new product to the store.
 
     * __NOTE:__ _Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin"_.
-
     * LIVE DEMO:
         * https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
 
@@ -82,6 +80,5 @@ This application utilizes MySQL and Node to simulate an Amazon-like storefront. 
         * The app displays a summarized table of the SQL Database Data directly in the console.
 
     * __NOTE:__ _Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin"_.
-
     * LIVE DEMO:
         * https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
