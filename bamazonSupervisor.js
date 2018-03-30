@@ -38,12 +38,16 @@ function supervisorMenu() {
 }//<-- end supervisorMenu()
 
 function salesByDepartment() {
+
     connection.query("SELECT * FROM departments", function(err, queryResponse) {
         if (err) throw err;
-        console.log("-----------------------------------");
+
+        console.log("----------------------------------------------");
         console.log("PRODUCT SALES BY DEPARTMENT:");
-        console.log("-----------------------------------");
+        console.log("----------------------------------------------");
+
         var values = [];
+
         for (var i = 0; i < queryResponse.length; i++) {
             var eachValue = [
                 queryResponse[i].department_id,
@@ -52,10 +56,13 @@ function salesByDepartment() {
             ];
             values.push(eachValue);
         }//<-- end For loop
+        
         console.table(['Department ID', 'Department Name', 'Overhead Costs'], values);
-        console.log("-----------------------------------");
+        console.log("----------------------------------------------");
         anotherAction();
-    });//<-- end connection.query
+
+    });//<-- end departments connection.query
+
 }//<-- end salesByDepartment()
 
 function createNewDepartment() {
@@ -87,11 +94,11 @@ function createNewDepartment() {
                 },
                 function(err, queryResponse) {
                     if(err) throw err;
-                    console.log("-----------------------------------");
+                    console.log("----------------------------------------------");
                     console.log("New Department Successfully Added!");
-                    console.log("-----------------------------------");
+                    console.log("----------------------------------------------");
                     console.log("Department Name: " + response.departmentName + " \nOverhead Costs: " + response.overheadCosts);
-                    console.log("-----------------------------------");
+                    console.log("----------------------------------------------");
                     anotherAction();
                 }
             );//<-- end INSERT connection.query 
