@@ -77,9 +77,9 @@ __DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
 
 * Upon running the command, the app prompts the supervisor to select between two options:
     * __View Product Sales By Department__
-        * This choice allows the manager to add a completely new product to the store.
+        * The app displays a summarized table of the SQL Database Data directly in the console.
 
     * __Create New Department__
-        * The app displays a summarized table of the SQL Database Data directly in the console.
+        * This choice allows the supervisor to create a new department.
 
 __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
