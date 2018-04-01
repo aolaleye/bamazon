@@ -39,6 +39,8 @@ __DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 
 * Once the update goes through, the app shows the customer the total cost of their purchase.
 
+* ![alt text](img/bamazon1.gif)
+
 
 ### Manager View: 
 __DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
@@ -56,6 +58,8 @@ __DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
 
     * __Add New Product__
         * This choice allows the manager to add a completely new product to the store.
+
+    * ![alt text](img/bamazon2.gif)    
 
 __NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
 
@@ -81,5 +85,7 @@ __DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
 
     * __Create New Department__
         * This choice allows the supervisor to create a new department.
+
+    * ![alt text](img/bamazon3.gif)    
 
 __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
