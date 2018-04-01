@@ -10,6 +10,7 @@ This application utlizes the following npm packages:
 
 __Note:__ run `npm i` to install the packages included in the json package
 
+#
 
 ### Customer View: 
 __DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
@@ -39,8 +40,9 @@ __DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 
 * Once the update goes through, the app shows the customer the total cost of their purchase.
 
-* ![alt text](img/bamazon1.gif)
+![alt text](img/bamazon1.gif)
 
+#
 
 ### Manager View: 
 __DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
@@ -57,12 +59,13 @@ __DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
         * This choice allows the manager add inventory to any item currently in the store.
 
     * __Add New Product__
-        * This choice allows the manager to add a completely new product to the store.
-
-    * ![alt text](img/bamazon2.gif)    
+        * This choice allows the manager to add a completely new product to the store.    
 
 __NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
 
+![alt text](img/bamazon2.gif)
+
+#
 
 ### Supervisor View: 
 __DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
@@ -84,8 +87,8 @@ __DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
         * The app displays a summarized table of the SQL Database Data directly in the console.
 
     * __Create New Department__
-        * This choice allows the supervisor to create a new department.
-
-    * ![alt text](img/bamazon3.gif)    
+        * This choice allows the supervisor to create a new department.   
 
 __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
+
+![alt text](img/bamazon3.gif) 
