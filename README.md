@@ -12,7 +12,7 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 
 ### Customer View: 
-__DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
+__DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 * #### `node bamazonCustomer.js`
 
 * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
@@ -41,7 +41,7 @@ __DEMO:__ https://drive.google.com/file/d/1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3/view
 
 
 ### Manager View: 
-__DEMO:__ https://drive.google.com/file/d/1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F/view
+__DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
 * #### `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
@@ -61,7 +61,7 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
 
 
 ### Supervisor View: 
-__DEMO:__ https://drive.google.com/file/d/1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss/view
+__DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
 * #### `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
