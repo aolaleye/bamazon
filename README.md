@@ -14,7 +14,7 @@ __Note:__ run `npm install` to install the packages included in the json package
 
 ### Customer View:
 
-> #### `node bamazonCustomer.js`
+#### > `node bamazonCustomer.js`
 
 * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
 
@@ -44,7 +44,7 @@ __Note:__ run `npm install` to install the packages included in the json package
 
 ### Manager View: 
 
-> #### `node bamazonManager.js`
+> #### > `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
     * __View Products for Sale__
@@ -65,7 +65,7 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
 
 ### Supervisor View: 
 
-> #### `node bamazonSupervisor.js`
+> #### > `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
 
@@ -90,6 +90,6 @@ __NOTE:__ Upon running the app in Supervisor View, the application asks for a pa
 
 #
 
-__DEMO VIDEO:__
+### __DEMO VIDEO:__
 
 [![Bamazon Demo Video](bamazon1.gif)](https://drive.google.com/open?id=1jDiS1GDwM6pQHTamKHWpE67H-OFAlz9U)
