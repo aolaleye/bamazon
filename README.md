@@ -8,17 +8,17 @@ This application utlizes the following npm packages:
 * __inquirer__ _(to retrieve information from the user)_
 * __console.table__ _(to log SQL tables to the console)_
 
-__Note:__ run `npm i` to install the packages included in the json package
+__Note:__ run `npm install` to install the packages included in the json package
 
 #
 
 ### Customer View:
 
-#### `node bamazonCustomer.js`
+> #### `node bamazonCustomer.js`
 
 * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
 
-* The database contains the __products__ table which houses each product's:
+* The database contains a __products__ table which houses each product's:
     * item_id *(Unique id for each product)*
     * product_name *(The name of the product)*
     * department_name *(The name of product's department)*
@@ -44,7 +44,7 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 ### Manager View: 
 
-#### `node bamazonManager.js`
+> #### `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
     * __View Products for Sale__
@@ -65,7 +65,7 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
 
 ### Supervisor View: 
 
-#### `node bamazonSupervisor.js`
+> #### `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
 
@@ -81,6 +81,7 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
 * Upon running the command, the app prompts the supervisor to select between two options:
     * __View Product Sales By Department__
         * The app displays a summarized table of the SQL Database Data directly in the console.
+        * Aside from the Department ID, Department Name and Overhead Costs, the table also includes a Total Sales column, which groups products sales by department, and a Total Profit column, which is calculates the difference between Overhead Costs and Product Sales.
 
     * __Create New Department__
         * This choice allows the supervisor to create a new department.   
@@ -89,6 +90,6 @@ __NOTE:__ Upon running the app in Supervisor View, the application asks for a pa
 
 #
 
-__DEMO:__
+__DEMO VIDEO:__
 
-[![Bamazon Demo](bamazon1.gif)](https://drive.google.com/open?id=1wX5IbiVc6J1W8e_OVdS789PAEfdMkNbD)
+[![Bamazon Demo Video](bamazon1.gif)](https://drive.google.com/open?id=1jDiS1GDwM6pQHTamKHWpE67H-OFAlz9U)
