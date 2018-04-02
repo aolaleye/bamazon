@@ -65,7 +65,7 @@ function viewProductsForSale() {
         if (err) throw err;
         for (var i = 0; i < queryResponse.length; i++) {
             console.log("-----------------------------------");
-            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
+            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + parseFloat(queryResponse[i].price).toFixed(2) + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
         }
         console.log("-----------------------------------");
         anotherAction();
@@ -80,7 +80,7 @@ function viewLowInventory() {
         for (var i = 0; i < queryResponse.length; i++) {
             if(queryResponse[i].stock_quantity < 15) {
             console.log("-----------------------------------");
-            console.log("Item Name: " + queryResponse[i].product_name + "\nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
+            console.log("Item ID #: " + queryResponse[i].item_id + "\nItem Name: " + queryResponse[i].product_name + "\nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             }
         }
         console.log("-----------------------------------");
@@ -215,7 +215,7 @@ function addNewProduct() {
                     console.log("-----------------------------------");
                     console.log("New Product Successfully Added!");
                     console.log("-----------------------------------");
-                    console.log("Item ID #: " + itemID + " \nItem Name: " + response.itemName + " \nDepartment: " + response.itemDepartment + " \nPrice: $" + response.itemPrice + " \nNumber of Units Remaining: " + response.itemQuantity);
+                    console.log("Item ID #: " + itemID + " \nItem Name: " + response.itemName + " \nDepartment: " + response.itemDepartment + " \nPrice: $" + parseFloat(response.itemPrice).toFixed(2) + " \nNumber of Units Remaining: " + response.itemQuantity);
                     console.log("-----------------------------------");
                     anotherAction();
                 }

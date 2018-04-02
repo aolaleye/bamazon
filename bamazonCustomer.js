@@ -22,7 +22,7 @@ function itemsForSale() {
         console.log("All Available Products for Purchase:");
         console.log("---------------------------------------");
         for (var i = 0; i < queryResponse.length; i++) {
-            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + queryResponse[i].price + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
+            console.log("Item ID #: " + queryResponse[i].item_id + " \nItem Name: " + queryResponse[i].product_name + " \nDepartment: " + queryResponse[i].department_name + " \nPrice: $" + parseFloat(queryResponse[i].price).toFixed(2) + " \nNumber of Units Remaining: " + queryResponse[i].stock_quantity);
             console.log("-----------------------------------");
         }
     });
@@ -98,7 +98,7 @@ function placeOrder() {
 
                         console.log("Your Order Has Been Succesfully Placed!");
                         console.log("---------------------------------------");
-                        console.log("Your Total Price is: $" + customerPrice);
+                        console.log("Your Total Price is: $" + parseFloat(customerPrice).toFixed(2));
                         console.log("---------------------------------------");
                         anotherOrder();
 

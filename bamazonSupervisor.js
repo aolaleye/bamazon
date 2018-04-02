@@ -64,13 +64,13 @@ function salesByDepartment() {
         var values = [];
 
         for (var i = 0; i < queryResponse.length; i++) {
-            var totalProfit = queryResponse[i].over_head_costs - queryResponse[i].total_sales;
+            var totalProfit = queryResponse[i].total_sales - queryResponse[i].over_head_costs;
             var eachValue = [
                 queryResponse[i].department_id,
                 queryResponse[i].department_name,
-                queryResponse[i].over_head_costs,
-                queryResponse[i].total_sales,
-                totalProfit
+                parseFloat(queryResponse[i].over_head_costs).toFixed(2),
+                parseFloat(queryResponse[i].total_sales).toFixed(2),
+                parseFloat(totalProfit).toFixed(2)
             ];
             values.push(eachValue);
         }//<-- end For loop
@@ -115,7 +115,7 @@ function createNewDepartment() {
                     console.log("-------------------------------------------------------------------------");
                     console.log("New Department Successfully Added!");
                     console.log("-------------------------------------------------------------------------");
-                    console.log("Department Name: " + response.departmentName + " \nOverhead Costs: " + response.overheadCosts);
+                    console.log("Department Name: " + response.departmentName + " \nOverhead Costs: " + parseFloat(response.overheadCosts).toFixed(2));
                     console.log("-------------------------------------------------------------------------");
                     anotherAction();
                 }
