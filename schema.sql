@@ -25,14 +25,15 @@ INSERT INTO departments (department_name, over_head_costs) values ('jewelry', '5
 INSERT INTO departments (department_name, over_head_costs) values ('electronics', '10000.00');
 INSERT INTO departments (department_name, over_head_costs) values ('accessories', '60000.00');
 
-SELECT * FROM products;
-SELECT * FROM departments;
-
+DROP TABLE IF EXISTS view_departments;
+CREATE TABLE view_departments
+AS
 SELECT department_id, departments.department_name, over_head_costs,
-SUM(product_sales) AS total_product_sales
+SUM(product_sales) AS total_sales
 FROM products
 INNER JOIN departments ON products.department_name = departments.department_name
 GROUP BY department_id;
+SELECT * FROM view_departments;
 
-
-
+SELECT * FROM products;
+SELECT * FROM departments;
