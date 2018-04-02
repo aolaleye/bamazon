@@ -12,9 +12,9 @@ __Note:__ run `npm i` to install the packages included in the json package
 
 #
 
-### Customer View: 
-__DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
-* #### `node bamazonCustomer.js`
+### Customer View:
+
+#### `node bamazonCustomer.js`
 
 * During the purchasing process, the app accesses a MySQL Database called bamazon_db.
 
@@ -43,8 +43,8 @@ __DEMO:__ https://drive.google.com/open?id=1CaZDXp7iKAV55VMswkORMb3RNdtrNmN3
 #
 
 ### Manager View: 
-__DEMO:__ https://drive.google.com/open?id=1UaQE8JVaGZxqwgxR_c1-uD51EI2UGY8F
-* #### `node bamazonManager.js`
+
+#### `node bamazonManager.js`
 
 * Upon running the command, the app prompts the manager to select among four options:
     * __View Products for Sale__
@@ -64,8 +64,8 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
 #
 
 ### Supervisor View: 
-__DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
-* #### `node bamazonSupervisor.js`
+
+#### `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
 
@@ -86,3 +86,9 @@ __DEMO:__ https://drive.google.com/open?id=1ysfd5yCbpF_ElcXhgnwVRzb7i8CmALss
         * This choice allows the supervisor to create a new department.   
 
 __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
+
+#
+
+__DEMO:__
+
+[![Bamazon Demo](bamazon1.gif)](https://drive.google.com/open?id=1wX5IbiVc6J1W8e_OVdS789PAEfdMkNbD)
