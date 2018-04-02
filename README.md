@@ -59,7 +59,7 @@ __Note:__ run `npm install` to install the packages included in the json package
     * __Add New Product__
         * This choice allows the manager to add a completely new product to the store.    
 
-__NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
+> __NOTE:__ Upon running the app in Manager View, the application asks for a password. For test purposes, the password is "admin".
 
 #
 
@@ -86,10 +86,10 @@ __NOTE:__ Upon running the app in Manager View, the application asks for a passw
     * __Create New Department__
         * This choice allows the supervisor to create a new department.   
 
-__NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
+> __NOTE:__ Upon running the app in Supervisor View, the application asks for a password. For test purposes, the password is "admin".
 
 #
 
-### __Demo Video:__
+### > __Demo Video:__
 
 [![Bamazon Demo Video](bamazon1.gif)](https://drive.google.com/open?id=1jDiS1GDwM6pQHTamKHWpE67H-OFAlz9U)
