@@ -91,5 +91,4 @@ This application utlizes the following npm packages:
 #
 
 ### > __Demo Video:__
-
-[![Bamazon Demo Video](bamazon.gif)](https://drive.google.com/open?id=1jDiS1GDwM6pQHTamKHWpE67H-OFAlz9U)
+[![Bamazon Demo Video](bamazon1.gif)](https://drive.google.com/open?id=1jDiS1GDwM6pQHTamKHWpE67H-OFAlz9U)
