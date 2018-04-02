@@ -8,7 +8,7 @@ This application utlizes the following npm packages:
 * __inquirer__ _(to retrieve information from the user)_
 * __console.table__ _(to log SQL tables to the console)_
 
-__Note:__ run `npm install` to install the packages included in the json package
+> __Note:__ run `npm install` to install the packages included in the json package
 
 #
 
@@ -65,7 +65,7 @@ __Note:__ run `npm install` to install the packages included in the json package
 
 ### Supervisor View: 
 
-> #### > `node bamazonSupervisor.js`
+#### > `node bamazonSupervisor.js`
 
 * In Supervisor mode, the app accesses the __departments__ table within the MySQL Database.
 
