@@ -20,10 +20,10 @@ CREATE TABLE departments (
   PRIMARY KEY (department_id)
 );
 
-INSERT INTO departments (department_name, over_head_costs) values ('apparel', '20000.00');
-INSERT INTO departments (department_name, over_head_costs) values ('jewelry', '5000.00');
-INSERT INTO departments (department_name, over_head_costs) values ('electronics', '10000.00');
-INSERT INTO departments (department_name, over_head_costs) values ('accessories', '60000.00');
+INSERT INTO departments (department_name, over_head_costs) values ('apparel', '150.00');
+INSERT INTO departments (department_name, over_head_costs) values ('jewelry', '45.00');
+INSERT INTO departments (department_name, over_head_costs) values ('electronics', '1125.00');
+INSERT INTO departments (department_name, over_head_costs) values ('accessories', '75.00');
 
 DROP TABLE IF EXISTS view_departments;
 CREATE TABLE view_departments
@@ -37,3 +37,6 @@ SELECT * FROM view_departments;
 
 SELECT * FROM products;
 SELECT * FROM departments;
+
+
+
