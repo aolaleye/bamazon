@@ -1,9 +1,9 @@
-# Bamazon - MySQL/Node Application
+# Bamazon
 
 ### Overview
 This application utilizes MySQL and Node to simulate an Amazon-like storefront. The app ranges from Customer level - where it takes in orders from customers and depletes stock from the store's inventory - to Supervisor level - where it tracks overhead costs across the store's departments and outputs a SQL Table in the terminal.
 
-This application utlizes the following npm packages:
+This application utilizes the following npm packages:
 * __mysql__ _(to access the MySQL database)_
 * __inquirer__ _(to retrieve information from the user)_
 * __console.table__ _(to log SQL tables to the console)_
